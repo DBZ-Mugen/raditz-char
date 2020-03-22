@@ -5,6 +5,7 @@ type = S
 ctrl = 0
 anim = 170+random%2
 velset = 0,0
+
 ;ozaru
 [State 0, ChangeAnim]
 type = ChangeAnim
