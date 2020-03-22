@@ -105,19 +105,13 @@ time = 1
 [Statedef 191]
 type = S
 ctrl = 0
-anim = 7999
+anim = 192
 velset = 0,0
 
 [State 191, 2]
 type = AssertSpecial
 trigger1 = 1
 flag = Intro
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = !time
-v = 4
-value = 0
 
 [State 180, 1]
 type = ChangeState
@@ -1881,12 +1875,6 @@ ctrl = 0
 type = CtrlSet
 trigger1 = var(40) != 0 && win
 value = 0
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = roundstate = 0 && backedgedist = 87
-v = 18
-value = 1
 
 ;------- FX A QUITAR
 ;--------------------
