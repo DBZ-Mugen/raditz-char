@@ -272,7 +272,7 @@ value = 1006
 ctrl = 0
 
 ;---------------------------------------------------------------------------
-; Jump Strong Down Punch
+; Strong Down Punch
 [Statedef 253]
 type    = A
 movetype= A

@@ -507,7 +507,7 @@ type = ChangeState
 value = 3550
 triggerall = power >= 3000
 triggerall = command = "hypersolarflairesdown"
-trigger1 = statetype = A
+trigger1 = statetype = S || statetype = A
 trigger1 = ctrl
 
 ;superball
