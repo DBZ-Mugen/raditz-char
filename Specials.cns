@@ -1305,47 +1305,7 @@ anim = 3505
 ctrl = 0
 velset = 0, 0
 
-[State 0, VarSet]
-type = VarSet
-trigger1 = !time
-v = 47
-value = 1004
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = animelem = 40 && var(47) < 1004
-trigger2 = facing = enemy, facing
-trigger3 = var(47) = 1004 && animelem = 3 && enemy, var(47) < 1004
-v = 47
-value = 1000
-
-[State 0, ChangeAnim] ; para que se sincronicen
-type = ChangeAnim
-trigger1 = enemy, Animelem = 2 && enemy, var(47) > 1000
-value = 3505
-elem = 2
-persistent = 0
-
-[State 0, ChangeState] ; para cuando uno gana
-type = ChangeState
-triggerall = animelemtime(20) = 1
-trigger1 = var(47) > 1004 && enemy, var(47) < 1004 && enemy, var(47) > 1000
-value = 3505
-ctrl = 0
-
-[State 0, ChangeAnim] ; para cuando uno gana
-type = ChangeAnim
-trigger1 = prevstateno = 3505 && !time
-value = 3505
-elem = 3
-
-[State 0, VarSet]
-type = VarSet
-trigger1 = p2bodydist y != [-10,10]
-v = 47
-value = 1000
-
-[State 19000, Picture]
+[State 3505, Backgrund End]
 type = Explod
 trigger1 = Time = 3 && prevstateno != 3505
 anim = 70541
@@ -1362,7 +1322,7 @@ persistent = 1
 ignorehitpause = 1
 scale = 1,1
 
-[State 19000, Picture]
+[State 3505, Backgrund]
 type = Explod
 trigger1 = Time = 0 && prevstateno != 3505
 anim = 7054
@@ -1379,7 +1339,7 @@ persistent = 1
 ignorehitpause = 1
 scale = 1,1
 
-[State 19000, Picture]
+[State 3505, Picture]
 type = Explod
 trigger1 = time = 0 && prevstateno != 3505
 anim = 19000
@@ -1947,7 +1907,7 @@ anim = 3550
 ctrl = 0
 velset = 0,0
 
-[State 19000, Picture]
+[State 3550, Background end]
 type = Explod
 trigger1 = Time = 3
 anim = 70541
@@ -1964,7 +1924,7 @@ persistent = 1
 ignorehitpause = 1
 scale = 1,1
 
-[State 19000, Picture]
+[State 19000, Background]
 type = Explod
 trigger1 = Time = 0
 anim = 7054
@@ -1997,7 +1957,7 @@ persistent = 1
 ignorehitpause = 1
 scale = .75,.75
 
-; Charge con Aura  ----------
+; Charge con Aura  -------------------
 [State 730, EnvColor]
 type = EnvColor
 trigger1 = AnimElem = 1 && anim = 3550

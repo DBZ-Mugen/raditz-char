@@ -689,19 +689,19 @@ bindtime = 1
 sprpriority = 2
 ownpal = 1
 
-; [State 0, Explod]
-; type = Explod
-; triggerall = pos y = 0 && power >= 2000
-; trigger1 = Timemod = 20,0
-; anim = 7731
-; ID = 7731
-; pos = 0 ,-30
-; postype = p1
-; facing = ifelse(random>=500,1,-1)
-; bindtime = -1
-; sprpriority = 2
-; ownpal = 1
-; 
+[State 0, Explod]
+type = Explod
+triggerall = pos y = 0 && power >= 2000
+trigger1 = Timemod = 20,0
+anim = 7731
+ID = 7731
+pos = 0,-40
+postype = p1
+facing = ifelse(random>=500,1,-1)
+bindtime = -1
+sprpriority = 2
+ownpal = 1
+
 [State 0, aura]
 type = Explod
 triggerall = power = [0,999]

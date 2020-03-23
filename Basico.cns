@@ -1729,7 +1729,7 @@ trigger1 = 1
 text = "Helpers = %d Explods = %d var = %d P2dist x = %.0f P2dist y = %.0f"
 params = numhelper, numexplod, var(47), p2bodydist x, p2bodydist y
 
-; Guarda el valor del anim en el time = 1
+; Guarda el valor del anim en el time = 1 (para zanzoken por ejemplo)
 [State 0, Varset]
 type = VarSet
 trigger1 = Time = 1
@@ -1737,7 +1737,7 @@ v = 11
 value = anim
 ignorehitpause = 1
 
-; Cuando golpea en el aire
+; Se detiene cuando golpea en el aire
 [State 0, VelSet]
 type = VelSet
 trigger1 = stateno = [600,649]
@@ -1745,16 +1745,6 @@ trigger1 = statetype = A && movetype = A && movehit && (command = "holdup") && T
 trigger2 = stateno = 640 && prevstateno = 642 && movehit && Time < 15
 x = 0
 y = 0
-
-;Reset Intro PalFX
-[State 0, PalFX]
-type = PalFX
-trigger1 = prevstateno = 193
-time = 1
-add = 0,0,0
-mul = 256,256,256
-invertall = 0
-color = 256
 
 ; Reset AfterImage
 [State 0, AfterImage]
@@ -1771,28 +1761,28 @@ framegap = 1
 trans = add
 persistent = 0
 
-;Reset AfterImage
-[State 0, AfterImage]
-type = AfterImage
-triggerall = stateno != [1000,1010] ; fly
-triggerall = stateno != [1200,1212] ; various attacks
-triggerall = stateno != [1110,1118] ; fly combo mode
-trigger1 = prevstateno = [1000,1010]
-trigger2 = prevstateno = [1200,1212] ; down kick and fwd kick
-trigger3 = prevstateno = [3000,3010] ; supers
-trigger4 = prevstateno = [1110,1118]
-time = 1
-length = 1
-palcolor = 256
-palbright = 10,10,10
-palcontrast = 0,0,0
-paladd = 15,15,15
-timegap = 1
-framegap = 1
-trans = add
-persistent = 0
+; Reset AfterImage
+;[State 0, AfterImage]
+;type = AfterImage
+;triggerall = stateno != [1000,1010] ; fly
+;triggerall = stateno != [1200,1212] ; various attacks
+;triggerall = stateno != [1110,1118] ; fly combo mode
+;trigger1 = prevstateno = [1000,1010]
+;trigger2 = prevstateno = [1200,1212] ; down kick and fwd kick
+;trigger3 = prevstateno = [3000,3010] ; supers
+;trigger4 = prevstateno = [1110,1118]
+;time = 1
+;length = 1
+;palcolor = 256
+;palbright = 10,10,10
+;palcontrast = 0,0,0
+;paladd = 15,15,15
+;timegap = 1
+;framegap = 1
+;trans = add
+;persistent = 0
 
-; Fly mode
+; Fly mode end
 [State 0, VarSet]
 type = VarSet
 trigger1 = stateno = [0,21]
@@ -1802,7 +1792,7 @@ v = 3
 value = 0
 
 ;--------------------------------------------
-;Baja boludo, que estas arriba con el stand!
+; Baja boludo, que estas arriba con el stand!
 [State 0, ChangeState]
 type = ChangeState
 trigger1 = stateno = 0 && pos y < 0
@@ -1811,16 +1801,15 @@ ctrl = 0
 
 ;--------------------------------------------
 ; Para combo teleports
-
 [State 0, VarSet]
 type = Varset
 trigger1 = stateno = 0
 v = 16
 value = 0
 ignorehitpause = 1
-; 
+
 ;--------------------------------------------
-;GuardCrash
+; GuardCrash
 
 [State 0, ChangeState]
 type = ChangeState
@@ -1877,8 +1866,8 @@ type = CtrlSet
 trigger1 = var(40) != 0 && win
 value = 0
 
-;------- FX A QUITAR
-;--------------------
+;--------------------------------------------
+; Remove FX
 
 [State 0, RemoveExplod]
 type = RemoveExplod
@@ -1910,7 +1899,8 @@ trigger1 = stateno != 3505
 v = 47
 value = 1000
 
-; Charge FXs
+;--------------------------------------------
+; Charge FXs remove
 [State 0, StopSnd]
 type = StopSnd
 trigger1 = prevstateno = 730

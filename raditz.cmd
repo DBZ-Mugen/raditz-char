@@ -721,7 +721,7 @@ trigger1 = statetype = S
 trigger1 = ctrl
 trigger2 = stateno = 1501
 trigger2 = animelemtime(2) >= 0
-trigger3 = stateno = [210,250]
+trigger3 = stateno = [200,699]
 trigger3 = movehit
 
 ;---------------------------------------------------------------------------
