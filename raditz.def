@@ -6,8 +6,8 @@
 [Info]
 name = "Raditz"
 displayname = "Raditz"
-versiondate = 24,02,2010
-mugenversion = 06,14,2003
+versiondate = 01,01,2020
+mugenversion = 1.1
 author = "Sawady"
 pal.defaults = 1
 
